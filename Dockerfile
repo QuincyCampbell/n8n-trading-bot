@@ -1,7 +1,3 @@
-
-# Step 4: Command to run when container starts
-CMD ["n8n", "start"]
-
 FROM n8nio/n8n:latest
 
 # Set working directory
@@ -36,5 +32,5 @@ EXPOSE 5678
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
   CMD curl -f http://localhost:5678/ || exit 1
 
-# Start n8n
+# Start n8n (this should be LAST)
 CMD ["n8n", "start"]
